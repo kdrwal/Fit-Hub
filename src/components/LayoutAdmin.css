@@ -1,0 +1,92 @@
+/* Layout Admin */
+.layout-admin {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.layout-admin .sidebar-container {
+  width: 250px;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.layout-admin .sidebar-container.collapsed {
+  transform: translateX(-250px);
+}
+
+.layout-admin .content {
+  flex: 1;
+  transition: margin-left 0.3s;
+  margin-left: 250px;
+  overflow-x: hidden;
+}
+
+.layout-admin.sidebar-collapsed .content {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .layout-admin .sidebar-container {
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+    transform: translateX(-250px);
+  }
+  .layout-admin.sidebar-open .sidebar-container {
+    transform: translateX(0);
+  }
+  .layout-admin .content {
+    margin-left: 0;
+  }
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  display: block;
+  position: fixed;
+  top: 15px;
+  left: 220px; /* Positioning to the right */
+  z-index: 101;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+    left: 15px; /* Ensure it stays on the right for mobile as well */
+  }
+}
+
+/* Sidebar CSS */
+.sidebar {
+  background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: transform 0.3s;
+}
+
+.sidebar.collapsed {
+  transform: translateX(-250px);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Sidebar List Items */
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+/* Brand Name */
+.brand-name {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}

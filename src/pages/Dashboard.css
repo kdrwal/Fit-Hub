@@ -1,0 +1,35 @@
+.dashboard-container {
+    padding: 15px;
+  }
+  
+  .dashboard-card-body {
+    text-align: left;
+  }
+  
+  @media (max-width: 576px) {
+    .dashboard-card-body {
+      text-align: center;
+    }
+    .dashboard-card .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .dashboard-card .col-xs-9,
+    .dashboard-card .col-xs-3 {
+      width: 100%;
+      text-align: center;
+    }
+    .dashboard-card .text-end {
+      text-align: center !important;
+    }
+    .dashboard-card {
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .dashboard-card-body {
+      text-align: left;
+    }
+  }

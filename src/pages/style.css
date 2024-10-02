@@ -1,0 +1,67 @@
+.list-group a:hover {
+    background-color: rgb(22, 105, 2);
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.3s;
+  }
+  
+  .sidebar.collapsed {
+    width: 0;
+    transition: all 0.3s;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar.collapsed {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  /* Sidebar List Items */
+  .list-group-item {
+    border: none;
+    border-bottom: 1px solid #000000;
+  }
+  
+  .list-group-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Brand Name */
+  .brand-name {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Toggle Button for Mobile */
+  .sidebar-toggle {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar-toggle {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 101;
+      cursor: pointer;
+    }
+  }
